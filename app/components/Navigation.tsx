@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 const navItems = [
     { label: "Home", href: "#hero" },
@@ -60,8 +61,16 @@ export default function Navigation() {
                         e.preventDefault();
                         handleNavClick("#hero");
                     }}
-                    className="text-xl font-bold tracking-tight text-primary"
+                    className="flex items-center gap-2 text-xl font-bold tracking-tight text-primary"
                 >
+                    <div className="relative w-8 h-8 rounded-full overflow-hidden border border-border">
+                        <Image
+                            src="/tj.PNG"
+                            alt="TJ"
+                            fill
+                            className="object-cover"
+                        />
+                    </div>
                     TJ
                 </a>
 
