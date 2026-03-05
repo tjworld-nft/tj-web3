@@ -94,16 +94,16 @@ const fallbackBooks = [
         subtitle: "Amazon AI絵本ランキング2位獲得。海を守る小さな勇者の物語",
         image: null,
         localImage: "/books/zenkun.png",
-        link: "https://amzn.to/3TmIyqI",
+        link: "https://amzn.to/4ny1P6k",
         badge: "Amazon 2位",
     },
     {
         _id: "fb-12",
-        title: "海のともだち・ミーちゃん",
+        title: "おかしだいすき みーちゃん",
         subtitle: "AI絵本。Kindle Unlimitedで読み放題",
         image: null,
         localImage: "/books/mi-chan.png",
-        link: "https://amzn.to/4ny1P6k",
+        link: "https://amzn.to/3TmIyqI",
     },
 ];
 

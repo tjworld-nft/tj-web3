@@ -61,13 +61,13 @@ export default function Contact() {
                             Webサイト制作などのご相談はこちらから。
                         </p>
                         <a
-                            href="mailto:info@aquabit-lab.com"
+                            href="/contact/ai"
                             className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-accent/10 text-accent font-medium text-sm transition-all duration-300 hover:bg-accent hover:text-white w-full justify-center"
                         >
                             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                             </svg>
-                            info@aquabit-lab.com
+                            お問い合わせフォームへ
                         </a>
                         <a
                             href="https://aquabit-lab.com/"
@@ -97,13 +97,13 @@ export default function Contact() {
                             マリンスポーツのご予約・お問い合わせはこちらから。
                         </p>
                         <a
-                            href="mailto:info@miura-diving.com"
+                            href="/contact/marine"
                             className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-marine/10 text-marine font-medium text-sm transition-all duration-300 hover:bg-marine hover:text-white w-full justify-center"
                         >
                             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                             </svg>
-                            info@miura-diving.com
+                            お問い合わせフォームへ
                         </a>
                         <a
                             href="https://miura-diving.com/"
