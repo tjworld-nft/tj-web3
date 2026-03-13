@@ -14,19 +14,32 @@ export default function MarineContactPage() {
         message: "",
     });
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [error, setError] = useState("");
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        setIsSubmitting(true);
+        setError("");
 
-        const subject = encodeURIComponent(
-            `【お問い合わせ】${formData.category || "マリンアクティビティ"} - ${formData.name}様`
-        );
-        const body = encodeURIComponent(
-            `お名前: ${formData.name}\nメールアドレス: ${formData.email}\n電話番号: ${formData.phone || "未入力"}\nお問い合わせ種別: ${formData.category || "未選択"}\nご希望日: ${formData.date || "未定"}\n参加人数: ${formData.people || "未定"}\n\n【お問い合わせ内容】\n${formData.message}`
-        );
+        try {
+            const res = await fetch("/api/contact/marine", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
 
-        window.location.href = `mailto:info@miura-diving.com?subject=${subject}&body=${body}`;
-        setIsSubmitted(true);
+            if (!res.ok) {
+                const data = await res.json();
+                throw new Error(data.error || "送信に失敗しました");
+            }
+
+            setIsSubmitted(true);
+        } catch (err) {
+            setError(err instanceof Error ? err.message : "送信に失敗しました。時間をおいて再度お試しください。");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -64,10 +77,11 @@ export default function MarineContactPage() {
 
                 {isSubmitted ? (
                     <div className="bg-white border border-border rounded-2xl p-12 text-center">
-                        <div className="text-5xl mb-4">✉️</div>
-                        <h2 className="text-xl font-bold text-primary mb-3">メールアプリが開きました</h2>
+                        <div className="text-5xl mb-4">✅</div>
+                        <h2 className="text-xl font-bold text-primary mb-3">送信完了</h2>
                         <p className="text-text-secondary text-sm mb-6">
-                            メールアプリでお問い合わせ内容をご確認のうえ、送信してください。
+                            お問い合わせありがとうございます。<br />
+                            内容を確認のうえ、折り返しご連絡いたします。
                         </p>
                         <button
                             onClick={() => setIsSubmitted(false)}
@@ -78,6 +92,11 @@ export default function MarineContactPage() {
                     </div>
                 ) : (
                     <form onSubmit={handleSubmit} className="bg-white border border-border rounded-2xl p-8 space-y-6">
+                        {error && (
+                            <div className="bg-red-50 border border-red-200 text-red-700 text-sm rounded-xl px-4 py-3">
+                                {error}
+                            </div>
+                        )}
                         {/* お名前 */}
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium text-primary mb-2">
@@ -201,14 +220,11 @@ export default function MarineContactPage() {
                         {/* 送信ボタン */}
                         <button
                             type="submit"
-                            className="w-full py-4 rounded-xl bg-marine text-white font-medium text-sm transition-all duration-300 hover:bg-marine-light hover:shadow-lg hover:shadow-marine/20 active:scale-[0.98]"
+                            disabled={isSubmitting}
+                            className="w-full py-4 rounded-xl bg-marine text-white font-medium text-sm transition-all duration-300 hover:bg-marine-light hover:shadow-lg hover:shadow-marine/20 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
                         >
-                            お問い合わせを送信
+                            {isSubmitting ? "送信中..." : "お問い合わせを送信"}
                         </button>
-
-                        <p className="text-xs text-text-tertiary text-center">
-                            送信ボタンを押すとメールアプリが開きます。内容をご確認のうえ送信してください。
-                        </p>
                     </form>
                 )}
             </main>
