@@ -14,8 +14,8 @@ export async function POST(request: Request) {
 
         const transporter = nodemailer.createTransport({
             host: "sv8718.xserver.jp",
-            port: 465,
-            secure: true,
+            port: 587,
+            secure: false,
             auth: {
                 user: process.env.SMTP_USER,
                 pass: process.env.SMTP_PASS,
@@ -39,7 +39,8 @@ export async function POST(request: Request) {
         });
 
         return NextResponse.json({ success: true });
-    } catch {
+    } catch (err) {
+        console.error("Contact AI error:", err);
         return NextResponse.json(
             { error: "送信に失敗しました。時間をおいて再度お試しください。" },
             { status: 500 }
