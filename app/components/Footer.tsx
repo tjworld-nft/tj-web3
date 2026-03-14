@@ -7,19 +7,19 @@ export default function Footer() {
 
                     <div className="flex flex-wrap justify-center gap-6 text-sm text-text-tertiary">
                         <a
-                            href="https://tj-web3.com/privacy-policy"
+                            href="/privacy-policy"
                             className="hover:text-text transition-colors"
                         >
                             プライバシーポリシー
                         </a>
                         <a
-                            href="https://tj-web3.com/tokusyoho"
+                            href="/tokushoho"
                             className="hover:text-text transition-colors"
                         >
                             特定商取引法
                         </a>
                         <a
-                            href="https://tj-web3.com/tandc"
+                            href="/terms"
                             className="hover:text-text transition-colors"
                         >
                             利用規約

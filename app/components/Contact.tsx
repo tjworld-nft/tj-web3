@@ -36,84 +36,8 @@ export default function Contact() {
                         お問い合わせ
                     </h2>
                     <p className="text-text-secondary mt-3 max-w-lg mx-auto">
-                        ウェビナーのご依頼、ダイビング・マリンスポーツのご予約など、
-                        お気軽にお問い合わせください。
+                        LINE公式アカウントからお気軽にお問い合わせください。
                     </p>
-                </div>
-
-                {/* Contact Cards */}
-                <div className={`grid sm:grid-cols-2 gap-6 mb-14 transition-all duration-1000 delay-200 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                    {/* ウェビナー・AI事業 */}
-                    <div className="bg-white border border-border rounded-2xl p-8 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group">
-                        <div className="flex items-center gap-3 mb-5">
-                            <span className="w-12 h-12 rounded-xl bg-accent-subtle flex items-center justify-center text-2xl">
-                                🤖
-                            </span>
-                            <div>
-                                <h3 className="text-lg font-bold text-primary group-hover:text-accent transition-colors">
-                                    ウェビナー・AI事業
-                                </h3>
-                                <p className="text-xs text-text-tertiary">AquaBit LAB</p>
-                            </div>
-                        </div>
-                        <p className="text-sm text-text-secondary mb-5 leading-relaxed">
-                            ChatGPT・AI活用ウェビナーの開催依頼、デジタルクリエイション、
-                            Webサイト制作などのご相談はこちらから。
-                        </p>
-                        <a
-                            href="/contact/ai"
-                            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-accent/10 text-accent font-medium text-sm transition-all duration-300 hover:bg-accent hover:text-white w-full justify-center"
-                        >
-                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                            </svg>
-                            お問い合わせフォームへ
-                        </a>
-                        <a
-                            href="https://aquabit-lab.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="mt-3 inline-flex items-center gap-1 text-sm text-text-tertiary hover:text-accent transition-colors w-full justify-center"
-                        >
-                            サイトを見る →
-                        </a>
-                    </div>
-
-                    {/* マリンアクティビティ */}
-                    <div className="bg-white border border-border rounded-2xl p-8 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group">
-                        <div className="flex items-center gap-3 mb-5">
-                            <span className="w-12 h-12 rounded-xl bg-marine-subtle flex items-center justify-center text-2xl">
-                                🌊
-                            </span>
-                            <div>
-                                <h3 className="text-lg font-bold text-primary group-hover:text-marine transition-colors">
-                                    マリンアクティビティ
-                                </h3>
-                                <p className="text-xs text-text-tertiary">三浦海の学校</p>
-                            </div>
-                        </div>
-                        <p className="text-sm text-text-secondary mb-5 leading-relaxed">
-                            ダイビング講習・体験ダイビング、SUP、シーカヤックなど
-                            マリンスポーツのご予約・お問い合わせはこちらから。
-                        </p>
-                        <a
-                            href="/contact/marine"
-                            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-marine/10 text-marine font-medium text-sm transition-all duration-300 hover:bg-marine hover:text-white w-full justify-center"
-                        >
-                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                            </svg>
-                            お問い合わせフォームへ
-                        </a>
-                        <a
-                            href="https://miura-diving.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="mt-3 inline-flex items-center gap-1 text-sm text-text-tertiary hover:text-marine transition-colors w-full justify-center"
-                        >
-                            サイトを見る →
-                        </a>
-                    </div>
                 </div>
 
                 {/* LINE公式アカウント */}
