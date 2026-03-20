@@ -53,7 +53,7 @@ export default function Hero() {
                         { number: "29+", label: "年の経験" },
                         { number: "1,500+", label: "認定ダイバー" },
                         { number: "500+", label: "ウェビナー参加者" },
-                        { number: "15+", label: "ウェビナー開催" },
+                        { number: "50+", label: "ウェビナー開催" },
                     ].map((stat, i) => (
                         <div key={i} className="text-center">
                             <div className="text-3xl sm:text-4xl font-bold text-white drop-shadow-lg">

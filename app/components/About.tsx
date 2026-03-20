@@ -82,7 +82,7 @@ export default function About() {
 
                     <div className="space-y-6 text-base sm:text-lg text-text-secondary leading-relaxed">
                         <p>
-                            AIデジタルクリエイターとして、累計<span className="text-primary font-semibold">500名以上</span>が参加するウェビナーを<span className="text-primary font-semibold">15回以上</span>開催。
+                            AIデジタルクリエイターとして、累計<span className="text-primary font-semibold">500名以上</span>が参加するウェビナーを<span className="text-primary font-semibold">50回以上</span>開催。
                             ChatGPTやMidjourney等のAIツールを駆使したクリエイティブワークを得意とし、
                             AquaBit LABとして絵本制作やLINEスタンプデザインなどを手掛けています。
                         </p>

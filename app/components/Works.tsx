@@ -55,9 +55,9 @@ const fallbackAiWorks = [
     },
     {
         _id: "fw-a3",
-        title: "AIウェビナー（15回以上開催）",
+        title: "AIウェビナー（50回以上開催）",
         description: "ChatGPT、CANVA×AI、NFT名刺作成、AI絵本制作など多彩なテーマで500名以上が参加。",
-        tags: ["500名+", "15回+"],
+        tags: ["500名+", "50回+"],
         category: "ai" as const,
         localImage: "/webinar2.png",
     },

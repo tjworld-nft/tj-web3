@@ -5,16 +5,20 @@ import type { SanityService } from "@/sanity/lib/types";
 
 // フォールバック用データ
 const fallbackWebinarList: SanityService[] = [
-    { _id: "fs-w1", name: "NFT名刺作成ウェビナー", price: "29,800円〜", category: "webinar" },
-    { _id: "fs-w2", name: "AI × CANVAでLINEスタンプ作成", price: "3,300円〜", category: "webinar" },
-    { _id: "fs-w3", name: "AI × CANVAでLOGO作成", price: "3,300円〜", category: "webinar" },
-    { _id: "fs-w4", name: "ChatGPT初心者向けウェビナー", price: "3,300円〜", category: "webinar" },
-    { _id: "fs-w5", name: "ChatGPTs作成ウェビナー", price: "29,800円〜", category: "webinar" },
-    { _id: "fs-w6", name: "AI × CANVAで漫画作成", price: "3,300円〜", category: "webinar" },
-    { _id: "fs-w7", name: "AI × CANVAで絵本作成", price: "29,800円〜", category: "webinar" },
-    { _id: "fs-w8", name: "CANVAで簡単WEBサイト作成", price: "29,800円〜", category: "webinar" },
-    { _id: "fs-w9", name: "CANVAで簡単LP作成", price: "29,800円〜", category: "webinar" },
-    { _id: "fs-w10", name: "その他各種ウェビナー", price: "ASK", category: "webinar" },
+    { _id: "fs-w1", name: "NFT名刺作成ウェビナー", price: "", category: "webinar" },
+    { _id: "fs-w2", name: "AIを使ってLINEスタンプ生成", price: "", category: "webinar" },
+    { _id: "fs-w3", name: "AI初心者用ウェビナー", price: "", category: "webinar" },
+    { _id: "fs-w4", name: "ChatGPTs、GEMs作成ウェビナー", price: "", category: "webinar" },
+    { _id: "fs-w5", name: "AIを使って漫画を作ってみよう", price: "", category: "webinar" },
+    { _id: "fs-w6", name: "AIを使って絵本を作ってみよう", price: "", category: "webinar" },
+    { _id: "fs-w7", name: "AIを使ってHP/LPを作ってみよう", price: "", category: "webinar" },
+    { _id: "fs-w8", name: "AIを使って音楽を作ってみよう", price: "", category: "webinar" },
+    { _id: "fs-w9", name: "Antigravity入門", price: "", category: "webinar" },
+    { _id: "fs-w10", name: "Google Opal入門", price: "", category: "webinar" },
+    { _id: "fs-w11", name: "Codex入門", price: "", category: "webinar" },
+    { _id: "fs-w12", name: "Claude Code入門", price: "", category: "webinar" },
+    { _id: "fs-w13", name: "Vibe Coding入門", price: "", category: "webinar" },
+    { _id: "fs-w14", name: "その他各種ウェビナー", price: "ASK", category: "webinar" },
 ];
 
 const fallbackDivingMenu: SanityService[] = [
@@ -25,7 +29,7 @@ const fallbackDivingMenu: SanityService[] = [
     { _id: "fs-d5", name: "各種SPダイバー講習", detail: "1〜2日", price: "27,500円〜", category: "marine" },
     { _id: "fs-d6", name: "各種プロフェッショナル講習", detail: "", price: "ASK", category: "marine" },
     { _id: "fs-d7", name: "体験ダイビング", detail: "半日", price: "16,500円", category: "marine" },
-    { _id: "fs-d8", name: "リフレッシュダイビング", detail: "半日", price: "13,200円", category: "marine" },
+    { _id: "fs-d8", name: "リフレッシュダイビング", detail: "半日", price: "14,800円", category: "marine" },
     { _id: "fs-d9", name: "2ビーチファンダイビング", detail: "", price: "13,200円", category: "marine" },
     { _id: "fs-d10", name: "2ボートファンダイビング", detail: "", price: "19,800円", category: "marine" },
     { _id: "fs-d11", name: "SUP", detail: "2時間", price: "5,500円", category: "marine" },
@@ -126,20 +130,22 @@ export default function Services({ services }: ServicesProps) {
                                         <span className="text-sm text-text-secondary group-hover:text-text transition-colors">
                                             {item.name}
                                         </span>
-                                        <span className="text-sm font-semibold text-primary whitespace-nowrap ml-4">
-                                            {item.price}
-                                        </span>
+                                        {item.price && (
+                                            <span className="text-sm font-semibold text-primary whitespace-nowrap ml-4">
+                                                {item.price}
+                                            </span>
+                                        )}
                                     </div>
                                 ))}
                             </div>
                             <div className="mt-8 text-center">
                                 <a
-                                    href="https://forms.gle/vTCGCPsn4rhhLqmW6"
+                                    href="https://aquabit-lab.com/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center px-8 py-3.5 rounded-full bg-primary text-white font-medium text-sm transition-all duration-300 hover:bg-primary-light hover:scale-[1.02]"
                                 >
-                                    ウェビナーのお問い合わせ
+                                    詳細はAquaBit LABへ →
                                 </a>
                             </div>
                         </div>
@@ -173,12 +179,12 @@ export default function Services({ services }: ServicesProps) {
                             </div>
                             <div className="mt-8 text-center">
                                 <a
-                                    href="https://forms.gle/QNBWCMy12rk9XAkbA"
+                                    href="https://miura-diving.com/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center px-8 py-3.5 rounded-full bg-primary text-white font-medium text-sm transition-all duration-300 hover:bg-primary-light hover:scale-[1.02]"
                                 >
-                                    マリンアクティビティのお問い合わせ
+                                    詳細は三浦 海の学校へ →
                                 </a>
                             </div>
                         </div>
