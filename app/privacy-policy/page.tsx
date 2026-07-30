@@ -8,12 +8,12 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
     return (
-        <div className="min-h-screen bg-bg-subtle">
-            <header className="bg-white border-b border-border">
+        <div className="min-h-screen bg-bg">
+            <header className="border-b border-border-light bg-[#03070f]/80 backdrop-blur-xl">
                 <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
                     <Link
                         href="/"
-                        className="flex items-center gap-2 text-sm text-text-secondary hover:text-accent transition-colors"
+                        className="flex items-center gap-2 text-sm text-text-secondary hover:text-marine transition-colors"
                     >
                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -26,7 +26,7 @@ export default function PrivacyPolicyPage() {
             <main className="max-w-3xl mx-auto px-6 py-12">
                 <h1 className="text-3xl font-bold text-primary mb-8">プライバシーポリシー</h1>
 
-                <div className="bg-white border border-border rounded-2xl p-8 space-y-8 text-sm text-text-secondary leading-relaxed">
+                <div className="glass glass-sheen rounded-2xl p-8 space-y-8 text-sm text-text-secondary leading-relaxed">
                     <p>
                         TJ（以下「当方」）は、当方が運営するウェブサイト（以下「本サイト」）において、
                         ユーザーの個人情報の取り扱いについて、以下のとおりプライバシーポリシーを定めます。

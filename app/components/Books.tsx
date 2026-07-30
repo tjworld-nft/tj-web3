@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import type { SanityBook } from "@/sanity/lib/types";
 import { urlFor } from "@/sanity/lib/image";
+import { useInView } from "./useInView";
 
 // フォールバック用のハードコードデータ（Sanityにデータがない場合に使用）
 const fallbackBooks = [
@@ -109,80 +109,69 @@ const fallbackBooks = [
 
 type BookItem = SanityBook & { localImage?: string };
 
-function useInView(ref: React.RefObject<HTMLElement | null>) {
-    const [isInView, setIsInView] = useState(false);
-    useEffect(() => {
-        const el = ref.current;
-        if (!el) return;
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) setIsInView(true);
-            },
-            { threshold: 0.05 }
-        );
-        observer.observe(el);
-        return () => observer.disconnect();
-    }, [ref]);
-    return isInView;
-}
-
 interface BooksProps {
     books?: SanityBook[];
 }
 
 export default function Books({ books }: BooksProps) {
-    const sectionRef = useRef<HTMLDivElement>(null);
-    const isInView = useInView(sectionRef);
+    const { ref, isInView } = useInView(0.05);
 
     // Sanityデータがあればそちらを使い、なければフォールバック
     const displayBooks: BookItem[] = books && books.length > 0 ? books : fallbackBooks;
 
     return (
-        <section id="books" className="relative py-28 bg-bg-subtle" ref={sectionRef}>
-            <div className="max-w-6xl mx-auto px-6">
+        <section id="books" className="section-veil relative py-28" ref={ref}>
+            <div className="mx-auto max-w-6xl px-6">
                 {/* Section header */}
-                <div className={`text-center mb-16 transition-all duration-1000 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                    <span className="text-text-tertiary text-sm font-medium tracking-widest uppercase">
-                        Books
-                    </span>
-                    <h2 className="text-3xl sm:text-4xl font-bold mt-3 text-primary">
+                <div
+                    className={`mb-16 text-center transition-all duration-1000 ${isInView ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                        }`}
+                >
+                    <span className="eyebrow">Books</span>
+                    <h2 className="mt-4 text-3xl font-bold text-primary sm:text-4xl">
                         著書一覧
                     </h2>
-                    <p className="text-text-secondary mt-3">
+                    <p className="mt-3 text-text-secondary">
                         ダイビング・マリンスポーツからAIまで。Kindle Unlimitedで読み放題の書籍も。
                     </p>
                 </div>
 
                 {/* Books Grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
+                <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
                     {displayBooks.map((book, i) => (
                         <a
                             key={book._id}
                             href={book.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`group transition-all duration-500 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                            className={`group transition-all duration-500 ${isInView ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                                 }`}
-                            style={{ transitionDelay: `${i * 60}ms` }}
+                            style={{ transitionDelay: `${i * 50}ms` }}
                         >
-                            <div className="relative aspect-[3/4] bg-white rounded-xl overflow-hidden border border-border shadow-sm transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1">
+                            <div className="hover-lift relative aspect-3/4 overflow-hidden rounded-xl border border-border bg-bg-muted">
                                 <Image
-                                    src={book.image ? urlFor(book.image).width(300).height(400).url() : (book as BookItem).localImage || ""}
+                                    src={
+                                        book.image
+                                            ? urlFor(book.image).width(300).height(400).url()
+                                            : (book as BookItem).localImage || ""
+                                    }
                                     alt={book.title}
                                     fill
+                                    sizes="(max-width: 640px) 45vw, (max-width: 1024px) 25vw, 16vw"
                                     className="object-cover"
                                 />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#03070f]/45 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                                 {book.badge && (
-                                    <div className="absolute top-2 left-2 bg-accent text-white text-xs font-bold px-2 py-1 rounded-md">
+                                    <div className="absolute top-2 left-2 rounded-md bg-gradient-to-r from-marine to-accent px-2 py-1 text-xs font-bold text-[#02121b]">
                                         {book.badge}
                                     </div>
                                 )}
                             </div>
                             <div className="mt-3">
-                                <h4 className="text-sm font-bold text-primary leading-tight group-hover:text-accent transition-colors line-clamp-2">
+                                <h4 className="line-clamp-2 text-sm leading-tight font-bold text-primary transition-colors group-hover:text-marine">
                                     {book.title}
                                 </h4>
-                                <p className="text-xs text-text-tertiary mt-1 leading-snug line-clamp-2">
+                                <p className="mt-1 line-clamp-2 text-xs leading-snug text-text-tertiary">
                                     {book.subtitle}
                                 </p>
                             </div>
