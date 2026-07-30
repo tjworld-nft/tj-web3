@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import type { SanityWork } from "@/sanity/lib/types";
 import { urlFor } from "@/sanity/lib/image";
+import { useInView } from "./useInView";
 
 // フォールバック用データ
 const fallbackMarineWorks = [
@@ -115,23 +115,6 @@ const fallbackAiWorks = [
 
 type WorkItem = SanityWork & { localImage?: string };
 
-function useInView(ref: React.RefObject<HTMLElement | null>) {
-    const [isInView, setIsInView] = useState(false);
-    useEffect(() => {
-        const el = ref.current;
-        if (!el) return;
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) setIsInView(true);
-            },
-            { threshold: 0.05 }
-        );
-        observer.observe(el);
-        return () => observer.disconnect();
-    }, [ref]);
-    return isInView;
-}
-
 function WorkCard({
     work,
     index,
@@ -148,34 +131,40 @@ function WorkCard({
 
     const card = (
         <div
-            className={`bg-white rounded-2xl p-6 h-full flex flex-col border border-border transition-all duration-500 hover:shadow-md hover:-translate-y-1 group ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            className={`glass glass-sheen hover-lift group flex h-full flex-col rounded-2xl p-6 transition-all duration-500 ${isInView ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                 }`}
-            style={{ transitionDelay: `${index * 60}ms` }}
+            style={{ transitionDelay: `${index * 55}ms` }}
         >
             {/* Optional image */}
             {imageSrc && (
-                <div className="relative w-full aspect-video rounded-lg overflow-hidden mb-4 bg-bg-muted">
+                <div className="relative mb-5 aspect-video w-full overflow-hidden rounded-xl bg-bg-muted ring-1 ring-border-light">
                     <Image
                         src={imageSrc}
                         alt={work.title}
                         fill
-                        className="object-cover"
+                        sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#03070f]/70 via-transparent to-transparent" />
                 </div>
             )}
 
-            <h4 className={`text-base font-bold mb-3 transition-colors ${isMarine ? "text-primary group-hover:text-marine" : "text-primary group-hover:text-accent"
-                }`}>
+            <h4
+                className={`mb-3 text-base font-bold text-primary transition-colors ${isMarine ? "group-hover:text-marine" : "group-hover:text-accent-light"
+                    }`}
+            >
                 {work.title}
             </h4>
-            <p className="text-sm text-text-secondary leading-relaxed flex-grow">
+            <p className="flex-grow text-sm leading-relaxed text-text-secondary">
                 {work.description}
             </p>
-            <div className="flex flex-wrap gap-2 mt-4">
+            <div className="mt-4 flex flex-wrap gap-2">
                 {work.tags?.map((tag) => (
                     <span
                         key={tag}
-                        className={`text-xs px-2.5 py-1 rounded-full ${isMarine ? "bg-marine-subtle text-marine" : "bg-accent-subtle text-accent"
+                        className={`rounded-full px-2.5 py-1 text-xs ${isMarine
+                            ? "bg-marine-subtle text-marine"
+                            : "bg-accent-subtle text-accent-light"
                             }`}
                     >
                         {tag}
@@ -183,10 +172,12 @@ function WorkCard({
                 ))}
             </div>
             {work.link && (
-                <div className="mt-4 pt-4 border-t border-border-light">
-                    <span className={`text-sm font-medium transition-colors ${isMarine ? "text-marine" : "text-accent"
-                        }`}>
-                        サイトを見る →
+                <div className="mt-4 border-t border-border-light pt-4">
+                    <span
+                        className={`inline-flex items-center gap-1.5 text-sm font-medium transition-all duration-300 group-hover:gap-2.5 ${isMarine ? "text-marine" : "text-accent-light"
+                            }`}
+                    >
+                        サイトを見る <span aria-hidden="true">→</span>
                     </span>
                 </div>
             )}
@@ -209,8 +200,7 @@ interface WorksProps {
 }
 
 export default function Works({ works }: WorksProps) {
-    const sectionRef = useRef<HTMLDivElement>(null);
-    const isInView = useInView(sectionRef);
+    const { ref, isInView } = useInView(0.05);
 
     // Sanityデータがあればカテゴリ分け、なければフォールバック
     const hasData = works && works.length > 0;
@@ -222,38 +212,67 @@ export default function Works({ works }: WorksProps) {
         : fallbackAiWorks;
 
     return (
-        <section id="works" className="relative py-28" ref={sectionRef}>
-            <div className="max-w-6xl mx-auto px-6">
+        <section id="works" className="relative py-28" ref={ref}>
+            <div className="mx-auto max-w-6xl px-6">
                 {/* Section header */}
-                <div className={`text-center mb-16 transition-all duration-1000 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                    <span className="text-text-tertiary text-sm font-medium tracking-widest uppercase">
-                        Works
-                    </span>
-                    <h2 className="text-3xl sm:text-4xl font-bold mt-3 text-primary">
+                <div
+                    className={`mb-16 text-center transition-all duration-1000 ${isInView ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                        }`}
+                >
+                    <span className="eyebrow">Works</span>
+                    <h2 className="mt-4 text-3xl font-bold text-primary sm:text-4xl">
                         実績・制作物
                     </h2>
                 </div>
 
                 {/* Marine Section */}
                 <div className="mb-20">
-                    <h3 className="text-lg font-bold text-marine mb-6 pb-3 border-b border-border">
-                        Marine Business — マリン事業
-                    </h3>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div className="mb-7">
+                        <h3 className="font-display text-lg font-bold text-marine">
+                            Marine Business
+                            <span className="ml-2 text-sm font-normal text-text-tertiary">
+                                — マリン事業
+                            </span>
+                        </h3>
+                        <div className="rule-glow mt-3" />
+                    </div>
+                    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                         {marineWorks.map((work, i) => (
-                            <WorkCard key={work._id} work={work} index={i} isInView={isInView} />
+                            <WorkCard
+                                key={work._id}
+                                work={work}
+                                index={i}
+                                isInView={isInView}
+                            />
                         ))}
                     </div>
                 </div>
 
                 {/* AI Section */}
                 <div>
-                    <h3 className="text-lg font-bold text-accent mb-6 pb-3 border-b border-border">
-                        AquaBit LAB — AI・クリエイティブ
-                    </h3>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div className="mb-7">
+                        <h3 className="font-display text-lg font-bold text-accent-light">
+                            AquaBit LAB
+                            <span className="ml-2 text-sm font-normal text-text-tertiary">
+                                — AI・クリエイティブ
+                            </span>
+                        </h3>
+                        <div
+                            className="mt-3 h-px"
+                            style={{
+                                background:
+                                    "linear-gradient(90deg, rgba(124,140,255,0.5), rgba(53,215,242,0.2), transparent)",
+                            }}
+                        />
+                    </div>
+                    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                         {aiWorks.map((work, i) => (
-                            <WorkCard key={work._id} work={work} index={i + marineWorks.length} isInView={isInView} />
+                            <WorkCard
+                                key={work._id}
+                                work={work}
+                                index={i + marineWorks.length}
+                                isInView={isInView}
+                            />
                         ))}
                     </div>
                 </div>

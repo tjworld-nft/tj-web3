@@ -1,4 +1,6 @@
 import Navigation from "./components/Navigation";
+import OceanBackground from "./components/OceanBackground";
+import RendererBadge from "./components/RendererBadge";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Works from "./components/Works";
@@ -28,8 +30,10 @@ export default async function Home() {
 
   return (
     <>
+      <OceanBackground />
+      <RendererBadge />
       <Navigation />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <About />
         <Works works={works} />

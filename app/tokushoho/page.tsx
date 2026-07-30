@@ -45,12 +45,12 @@ export default function TokushohoPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-bg-subtle">
-            <header className="bg-white border-b border-border">
+        <div className="min-h-screen bg-bg">
+            <header className="border-b border-border-light bg-[#03070f]/80 backdrop-blur-xl">
                 <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
                     <Link
                         href="/"
-                        className="flex items-center gap-2 text-sm text-text-secondary hover:text-accent transition-colors"
+                        className="flex items-center gap-2 text-sm text-text-secondary hover:text-marine transition-colors"
                     >
                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -63,13 +63,13 @@ export default function TokushohoPage() {
             <main className="max-w-3xl mx-auto px-6 py-12">
                 <h1 className="text-3xl font-bold text-primary mb-8">特定商取引法に基づく表記</h1>
 
-                <div className="bg-white border border-border rounded-2xl overflow-hidden">
+                <div className="glass glass-sheen rounded-2xl overflow-hidden">
                     {items.map((item, i) => (
                         <div
                             key={item.label}
                             className={`flex flex-col sm:flex-row ${i !== items.length - 1 ? "border-b border-border" : ""}`}
                         >
-                            <div className="sm:w-48 flex-shrink-0 bg-bg-subtle px-6 py-4 text-sm font-medium text-primary">
+                            <div className="sm:w-48 flex-shrink-0 bg-bg-muted px-6 py-4 text-sm font-medium text-primary">
                                 {item.label}
                             </div>
                             <div className="px-6 py-4 text-sm text-text-secondary leading-relaxed whitespace-pre-line">
