@@ -1,62 +1,55 @@
+import { LINKS } from "../content";
+
+const siteLinks = [
+    { href: LINKS.marine, label: "三浦 海の学校" },
+    { href: LINKS.aquabit, label: "AquaBit LAB" },
+    { href: LINKS.music, label: "TJ Music" },
+    { href: LINKS.lineStickers, label: "LINEスタンプ" },
+];
+
 const legalLinks = [
     { href: "/privacy-policy", label: "プライバシーポリシー" },
     { href: "/tokushoho", label: "特定商取引法" },
     { href: "/terms", label: "利用規約" },
 ];
 
-const siteLinks = [
-    { href: "https://miura-diving.com/", label: "三浦 海の学校" },
-    { href: "https://aquabit-lab.com/", label: "AquaBit LAB" },
-    { href: "https://tj-music.com/", label: "TJ Music" },
-];
-
 export default function Footer() {
     return (
-        <footer className="section-veil-solid relative z-10 border-t border-border-light py-12">
-            <div className="mx-auto max-w-6xl px-6">
-                <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
+        <footer className="footer" data-depth="1000">
+            <div className="wrap">
+                <div className="footer__grid">
                     <div>
-                        <span className="font-display text-lg font-bold text-primary">TJ</span>
-                        <p className="mt-2 max-w-xs text-xs leading-relaxed text-text-tertiary">
-                            海とAIで、未来を創る。
-                            <br />
-                            PADIコースディレクター × AIデジタルクリエイター
+                        <p className="mono" style={{ color: "var(--ink)", fontWeight: 700, letterSpacing: "0.18em", margin: 0 }}>
+                            TJ — 吉田 哲司
                         </p>
+                        <p style={{ margin: "6px 0 0" }}>海にも、AIにも、深く潜る。</p>
                     </div>
-
-                    <div className="flex flex-col gap-3 text-sm sm:items-end">
-                        <div className="flex flex-wrap gap-x-6 gap-y-2 text-text-tertiary sm:justify-end">
-                            {siteLinks.map((link) => (
-                                <a
-                                    key={link.href}
-                                    href={link.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="transition-colors hover:text-marine"
-                                >
-                                    {link.label}
-                                </a>
+                    <div style={{ display: "grid", gap: 10 }}>
+                        <ul className="footer__links">
+                            {siteLinks.map((l) => (
+                                <li key={l.href}>
+                                    <a href={l.href} target="_blank" rel="noopener noreferrer">
+                                        {l.label}
+                                    </a>
+                                </li>
                             ))}
-                        </div>
-                        <div className="flex flex-wrap gap-x-6 gap-y-2 text-text-tertiary sm:justify-end">
-                            {legalLinks.map((link) => (
-                                <a
-                                    key={link.href}
-                                    href={link.href}
-                                    className="transition-colors hover:text-text"
-                                >
-                                    {link.label}
-                                </a>
+                        </ul>
+                        <ul className="footer__links">
+                            {legalLinks.map((l) => (
+                                <li key={l.href}>
+                                    <a href={l.href}>{l.label}</a>
+                                </li>
                             ))}
-                        </div>
+                        </ul>
                     </div>
                 </div>
-
-                <div className="rule-glow mt-9" />
-
-                <div className="mt-5 text-xs text-text-tertiary">
+                <p className="footer__note">
+                    画面の海は、3Dライブラリを使わずに手で書いた WebGL2 のシェーダーで、ブラウザがその場で描いています。空の色は三浦（城ヶ島）の今の太陽の高さと月齢から、水温は気象庁「沿岸域の海面水温情報」相模湾の日別平年値（1991〜2020年）から出しています。深い所の水温はモデル値です。
+                    ダイブコンピューターの数値は演出です。NDL（減圧不要限界）は PADI RDP の値を参考にした表示で、実際のダイビング計画には使わないでください。
+                </p>
+                <p className="footer__note" style={{ marginTop: 10 }}>
                     © {new Date().getFullYear()} TJ / AquaBit LAB
-                </div>
+                </p>
             </div>
         </footer>
     );
