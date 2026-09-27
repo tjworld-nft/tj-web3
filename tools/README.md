@@ -1,23 +1,19 @@
 # tools
 
-## og-image.html
+## OGP 画像（`public/og-dive-2026-09.jpg`）
 
-`public/og.jpg`（OGP / Twitter カード用 1200×630 画像）の元データ。
-文言や色を変えたいときはこのファイルを編集して、以下で再生成する。
+実際のトップページ（夕方の空・水面で割れた見出し）をそのまま撮って作っている。
 
-```bash
-npm run dev
-```
+1. `npm run dev` で開発サーバーを立てる
+2. ヘッドレス Chrome（GPU を有効にして）で 1200×630・倍率2で撮る
+   URL: `http://localhost:3000/?time=golden&og`
+   - `?time=golden` … 空を夕方に固定（`day` / `night` / `live` もある）
+   - `?og` … 上のバー・計器・スクロール案内を消す
+3. 1200×630 に縮小し、右上に「TJ ─ 吉田 哲司」「www.tj-web3.com」を載せる（ヒラギノ明朝 W6・Menlo）
+4. **ファイル名は日付入りで新しく作る**（同じ名前のまま中身を替えると、SNS側のキャッシュで古い画像が出続ける）。
+   `app/layout.tsx` の `openGraph.images` と `twitter.images` を新しい名前に替える。
 
-別のターミナルで:
+## 確認用の URL パラメーター
 
-```bash
-"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --hide-scrollbars --disable-gpu --force-device-scale-factor=1 --virtual-time-budget=8000 --screenshot=/tmp/og.png --window-size=1200,630 "http://localhost:3000/../tools/og-image.html"
-```
-
-`/hero.png` を読み込むため、dev サーバー配下から開くか、ローカルの絶対パスに書き換えて開く。
-最後に JPEG へ変換して差し替える。
-
-```bash
-sips -s format jpeg -s formatOptions 92 /tmp/og.png --out public/og.jpg
-```
+- `?time=day|golden|night|live` … 空の時間帯（既定は三浦の今の時刻）
+- `?og` … 撮影用に計器などを隠す

@@ -42,3 +42,6 @@ next-env.d.ts
 
 # Claude Code local worktrees / settings
 /.claude/
+
+# 手元のビルド出力（iCloud の同期対象外）
+/.next.nosync/
