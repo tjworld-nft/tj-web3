@@ -5,7 +5,7 @@ const TAPE = "RECREATIONAL DIVING LIMIT 40m ── この先は言葉の海 ─�
 
 /** 40m。レクリエーショナルダイビングの限界水深。ここで海とAIがまざる（ハロクライン） */
 export default function Limit() {
-    const spans = ["span-3", "span-3", "", "", "", "span-6"];
+    const spans = ["span-3", "span-3", "", "", "", "span-3", "span-3"];
     return (
         <section id="limit" className="sec" data-depth="30" aria-labelledby="limit-title">
             <div className="wrap">

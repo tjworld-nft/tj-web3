@@ -1,4 +1,4 @@
-import { AI_WORKS, LINKS, TOPICS } from "@/app/content";
+import { AI_WORKS, FUSION_WORKS, LINKS, TOPICS } from "@/app/content";
 import LogCard from "./LogCard";
 
 const BUDDIES = [
@@ -19,7 +19,7 @@ const BUDDIES = [
 
 /** 言葉の海（AI）。背景の文字のプランクトンは、カーソルで触れると光る */
 export default function Words() {
-    const spans = ["span-4", "", "span-3", "span-3", "span-6"];
+    const spans = ["span-4", "", "", "", "", "span-6"];
     return (
         <section id="words" className="sec" data-depth="48" aria-labelledby="words-title">
             <div className="wrap">
@@ -58,7 +58,7 @@ export default function Words() {
                         <LogCard
                             key={w.id}
                             work={w}
-                            no={i + 7}
+                            no={i + FUSION_WORKS.length + 1}
                             className={spans[i]}
                             wide={spans[i] === "span-6"}
                         />
