@@ -2,7 +2,7 @@
  * サイトに載せる文章・実績・リンクはすべてここに集約する。
  * 数字は「実際に確認できるもの」だけを載せる（作らない）。
  *   - 1,500名+ / ウェビナー50回+ / 参加500名+ … 本人確認済みの実績値
- *   - アプリ2本 … App Store で公開中（Blue Logbook / いまメシ）
+ *   - アプリ4本 … App Store で公開中（Blue Logbook / いまメシ / 海学 / 龍脈マップ）
  *   - アルバム3枚・魚歌19曲 … tj-music.com・各配信サービス
  *   - まんが22話 … miura-diving.com/manga/
  *   - 著書12冊 … 下の books の件数
@@ -22,6 +22,10 @@ export const LINKS = {
     lineStickers: "https://store.line.me/stickershop/author/4627048/ja",
     blueLogbook: "https://apps.apple.com/jp/app/id6806158093",
     imameshi: "https://apps.apple.com/jp/app/id6806607641",
+    umigakuApp: "https://miura-diving.com/umigaku-app/",
+    umigakuAppStore: "https://apps.apple.com/jp/app/id6810276864",
+    ryumyaku: "https://apps.apple.com/jp/app/id6831985741",
+    ryumyakuGuide: "https://aquabit-lab.com/ryumyaku/",
     manga: "https://miura-diving.com/manga/",
     winterFilm: "https://miura-diving.com/winter-diving/",
     pvFilm: "https://miura-diving.com/#film",
@@ -38,7 +42,7 @@ export const STATS = [
     { value: "47", unit: "", label: "LINEスタンプ・絵文字" },
     { value: "3", unit: "枚", label: "配信中のアルバム" },
     { value: "22", unit: "話", label: "解説まんが" },
-    { value: "2", unit: "本", label: "App Store のアプリ" },
+    { value: "4", unit: "本", label: "App Store のアプリ" },
 ] as const;
 
 /**
@@ -124,6 +128,20 @@ export const FUSION_WORKS: Work[] = [
         depth: "40m",
     },
     {
+        id: "umigaku-app",
+        title: "海学",
+        kind: "iOS App",
+        date: "2026.09",
+        body: "三浦 海の学校の公式アプリ。歩いた歩数で海の相棒と過ごし、1日1枚の「海のタロット」や海のなかま図鑑を楽しむ。潜らない日も、海とのつながりが続くように。",
+        image: "/works/umigaku-app.webp",
+        imageAlt: "公式アプリ「海学」の画面3枚。ガチャで出会った海のなかま、歩数と相棒のホーム、今日の海のタロット",
+        href: LINKS.umigakuApp,
+        linkLabel: "アプリの案内を見る",
+        buddy: ["Flutter", "Codex", "Claude Code", "画像生成AI"],
+        depth: "41m",
+        extra: [{ label: "App Store", href: LINKS.umigakuAppStore }],
+    },
+    {
         id: "miura-site",
         title: "三浦 海の学校",
         kind: "Web / WebGPU",
@@ -134,7 +152,7 @@ export const FUSION_WORKS: Work[] = [
         href: LINKS.marine,
         linkLabel: "サイトを見る",
         buddy: ["WebGPU", "three.js", "Claude Code"],
-        depth: "41m",
+        depth: "42m",
     },
     {
         id: "pv",
@@ -148,7 +166,7 @@ export const FUSION_WORKS: Work[] = [
         href: LINKS.pvFilm,
         linkLabel: "映像を見る",
         buddy: ["Remotion", "three.js", "音楽生成AI"],
-        depth: "42m",
+        depth: "43m",
     },
     {
         id: "winter",
@@ -161,7 +179,7 @@ export const FUSION_WORKS: Work[] = [
         href: LINKS.winterFilm,
         linkLabel: "映像を見る",
         buddy: ["気象庁オープンデータ", "Remotion", "GLSL"],
-        depth: "43m",
+        depth: "44m",
     },
 ];
 
@@ -194,6 +212,20 @@ export const AI_WORKS: Work[] = [
         linkLabel: "App Store で見る",
         buddy: ["SwiftUI", "Foundation Models", "Claude Code"],
         depth: "180m",
+    },
+    {
+        id: "ryumyaku",
+        title: "龍脈マップ",
+        kind: "iOS App",
+        date: "2026.11",
+        body: "神社と、その土地のかたちを見る地図。全国の神社・お寺・自然の場所 約10万か所と、国土地理院の標高から計算した尾根のつながり「龍脈」を金の線で描く。暦と方位、百人一首の便りも。",
+        image: "/works/ryumyaku.webp",
+        imageAlt: "iOSアプリ「龍脈マップ」の画面3枚。金の線で描いた尾根の地図、神社の「ここの読み方」、百人一首の便り",
+        href: LINKS.ryumyaku,
+        linkLabel: "App Store で見る",
+        buddy: ["Flutter", "Claude Code", "国土地理院の標高", "OpenStreetMap"],
+        depth: "210m",
+        extra: [{ label: "案内とサポート", href: LINKS.ryumyakuGuide }],
     },
     {
         id: "tj-music",
