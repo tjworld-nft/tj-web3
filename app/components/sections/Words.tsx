@@ -19,7 +19,7 @@ const BUDDIES = [
 
 /** 言葉の海（AI）。背景の文字のプランクトンは、カーソルで触れると光る */
 export default function Words() {
-    const spans = ["span-4", "", "", "", "", "span-6"];
+    const spans = ["span-4", "", "span-3", "span-3", "span-3", "span-3", "span-6"];
     return (
         <section id="words" className="sec" data-depth="48" aria-labelledby="words-title">
             <div className="wrap">

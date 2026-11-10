@@ -2,9 +2,9 @@
  * サイトに載せる文章・実績・リンクはすべてここに集約する。
  * 数字は「実際に確認できるもの」だけを載せる（作らない）。
  *   - 1,500名+ / ウェビナー50回+ / 参加500名+ … 本人確認済みの実績値
- *   - アプリ4本 … App Store で公開中（Blue Logbook / いまメシ / 海学 / 龍脈マップ）
+ *   - アプリ5本 … App Store で公開中（Blue Logbook / いまメシ / 海学 / 龍脈マップ / 仏のたとえ）
  *   - アルバム3枚・魚歌19曲 … tj-music.com・各配信サービス
- *   - まんが22話 … miura-diving.com/manga/
+ *   - まんが24話 … miura-diving.com/manga/
  *   - 著書12冊 … 下の books の件数
  *   - LINEスタンプ・絵文字47セット … LINE STORE の作者ページの件数（2026-09-27確認）
  */
@@ -26,6 +26,8 @@ export const LINKS = {
     umigakuAppStore: "https://apps.apple.com/jp/app/id6810276864",
     ryumyaku: "https://apps.apple.com/jp/app/id6831985741",
     ryumyakuGuide: "https://aquabit-lab.com/ryumyaku/",
+    hotoke: "https://apps.apple.com/jp/app/id6832482210",
+    hotokeGuide: "https://aquabit-lab.com/hotoke/",
     manga: "https://miura-diving.com/manga/",
     winterFilm: "https://miura-diving.com/winter-diving/",
     pvFilm: "https://miura-diving.com/#film",
@@ -41,8 +43,8 @@ export const STATS = [
     { value: "12", unit: "冊", label: "著書（Kindle ほか）" },
     { value: "47", unit: "", label: "LINEスタンプ・絵文字" },
     { value: "3", unit: "枚", label: "配信中のアルバム" },
-    { value: "22", unit: "話", label: "解説まんが" },
-    { value: "4", unit: "本", label: "App Store のアプリ" },
+    { value: "24", unit: "話", label: "解説まんが" },
+    { value: "5", unit: "本", label: "App Store のアプリ" },
 ] as const;
 
 /**
@@ -103,7 +105,7 @@ export const FUSION_WORKS: Work[] = [
     {
         id: "manga",
         title: "まんがで読むダイビング",
-        kind: "AI Manga / 全22話",
+        kind: "AI Manga / 全24話",
         date: "2026.08 –",
         body: "「泳げないけど大丈夫？」「ひとりで行っていい？」── 申し込む前の不安に、1話3分のまんがで先回りして答える。作画はAI、監修はコースディレクター。動画版つき。",
         image: "/works/manga-collage.webp",
@@ -226,6 +228,20 @@ export const AI_WORKS: Work[] = [
         buddy: ["Flutter", "Claude Code", "国土地理院の標高", "OpenStreetMap"],
         depth: "210m",
         extra: [{ label: "案内とサポート", href: LINKS.ryumyakuGuide }],
+    },
+    {
+        id: "hotoke",
+        title: "仏のたとえ",
+        kind: "iOS App",
+        date: "2026.11",
+        body: "お経に出てくるたとえ話を、ひとつずつ短く。パーリ語と漢訳のお経の、両方に伝わる話だけを選び、文をさわると原文の一句が出る。影絵の動画つきで、同じ話をSNS「鬼と仏」の朝のコーナーでも。",
+        image: "/works/hotoke.webp",
+        imageAlt: "iOSアプリ「仏のたとえ」の画面3枚。影絵のオープニング、きょうの一話と悩みの言葉、お話の文の原文（パーリ語と漢訳）",
+        href: LINKS.hotoke,
+        linkLabel: "App Store で見る",
+        buddy: ["Flutter", "Claude Code", "SuttaCentral の原文", "音声合成AI"],
+        depth: "220m",
+        extra: [{ label: "案内とサポート", href: LINKS.hotokeGuide }],
     },
     {
         id: "tj-music",
