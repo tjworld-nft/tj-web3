@@ -2,7 +2,7 @@
  * サイトに載せる文章・実績・リンクはすべてここに集約する。
  * 数字は「実際に確認できるもの」だけを載せる（作らない）。
  *   - 1,500名+ / ウェビナー50回+ / 参加500名+ … 本人確認済みの実績値
- *   - アプリ5本 … App Store で公開中（Blue Logbook / いまメシ / 海学 / 龍脈マップ / 仏のたとえ）
+ *   - アプリ6本 … App Store で公開中（Blue Logbook / いまメシ / 海学 / 龍脈マップ / 仏のたとえ / うちの行事アルバム）
  *   - アルバム3枚・魚歌19曲 … tj-music.com・各配信サービス
  *   - まんが24話 … miura-diving.com/manga/
  *   - 著書12冊 … 下の books の件数
@@ -28,6 +28,8 @@ export const LINKS = {
     ryumyakuGuide: "https://aquabit-lab.com/ryumyaku/",
     hotoke: "https://apps.apple.com/jp/app/id6832482210",
     hotokeGuide: "https://aquabit-lab.com/hotoke/",
+    gyojiAlbum: "https://apps.apple.com/jp/app/id6833319101",
+    gyojiAlbumGuide: "https://aquabit-lab.com/gyoji-album/",
     manga: "https://miura-diving.com/manga/",
     winterFilm: "https://miura-diving.com/winter-diving/",
     pvFilm: "https://miura-diving.com/#film",
@@ -44,7 +46,7 @@ export const STATS = [
     { value: "47", unit: "", label: "LINEスタンプ・絵文字" },
     { value: "3", unit: "枚", label: "配信中のアルバム" },
     { value: "24", unit: "話", label: "解説まんが" },
-    { value: "5", unit: "本", label: "App Store のアプリ" },
+    { value: "6", unit: "本", label: "App Store のアプリ" },
 ] as const;
 
 /**
@@ -242,6 +244,20 @@ export const AI_WORKS: Work[] = [
         buddy: ["Flutter", "Claude Code", "SuttaCentral の原文", "音声合成AI"],
         depth: "220m",
         extra: [{ label: "案内とサポート", href: LINKS.hotokeGuide }],
+    },
+    {
+        id: "gyoji-album",
+        title: "うちの行事アルバム",
+        kind: "iOS App",
+        date: "2026.11",
+        body: "子どもの行事を、1枚ずつの券にして並べる。生年月日を入れると誕生日・七五三・入学式・運動会・お正月が並び、その日に撮った写真をiPhoneの写真から日付で見つけて入れる。きょうだいが何人でも。写真はiPhoneの外に出さない。",
+        image: "/works/gyoji-album.webp",
+        imageAlt: "iOSアプリ「うちの行事アルバム」の画面3枚。3人の同じ歳の誕生日の写真が並ぶ画面、うち全体の次の行事、行事の日の写真と撮る・写真からえらぶのボタン（写真は試験用の絵）",
+        href: LINKS.gyojiAlbum,
+        linkLabel: "App Store で見る",
+        buddy: ["Flutter", "Claude Code", "PhotoKit"],
+        depth: "230m",
+        extra: [{ label: "案内とサポート", href: LINKS.gyojiAlbumGuide }],
     },
     {
         id: "tj-music",
