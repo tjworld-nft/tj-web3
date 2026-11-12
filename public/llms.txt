@@ -14,7 +14,7 @@
 - 著書: 12冊（ダイビング・マリンスポーツ9冊、AI入門1冊、AI絵本2冊。Kindle ほか）
 - LINEスタンプ・絵文字: 47セット（LINE STORE 作者ページ）
 - 音楽: TJ Music（AIと制作）。アルバム3枚「Dive Drive Collection」「Certification Symphony」「魚歌 - UO-UTA -（2026年7月・全19曲）」
-- アプリ: App Store で5本公開中（Blue Logbook ／ いまメシ ／ 海学 ／ 龍脈マップ ／ 仏のたとえ）
+- アプリ: App Store で6本公開中（Blue Logbook ／ いまメシ ／ 海学 ／ 龍脈マップ ／ 仏のたとえ ／ うちの行事アルバム）
 - 解説まんが: 「まんがで読むダイビング」全24話（三浦 海の学校のサイトで公開）
 
 ## できること・頼めること
@@ -33,6 +33,7 @@
 - [海学](https://miura-diving.com/umigaku-app/): 三浦 海の学校の公式アプリ。歩数と海の相棒・海のタロット・海のなかま図鑑（iOS・無料）
 - [龍脈マップ](https://apps.apple.com/jp/app/id6831985741): 全国の神社・お寺・自然の場所 約10万か所と、標高から計算した尾根のつながり「龍脈」、暦と方位を見る地図（iOS・無料・案内 https://aquabit-lab.com/ryumyaku/ ）
 - [仏のたとえ](https://apps.apple.com/jp/app/id6832482210): お経のたとえ話を、パーリ語と漢訳の原文と一緒に短く読むアプリ。影絵の動画つき（iOS・無料・案内 https://aquabit-lab.com/hotoke/ ）
+- [うちの行事アルバム](https://apps.apple.com/jp/app/id6833319101): 子どもの行事を券のように並べ、その日に撮った写真をiPhoneの写真から日付で見つけて入れるアルバム。きょうだいが何人でも（iOS・無料・案内 https://aquabit-lab.com/gyoji-album/ ）
 - [三浦 海の学校 公式サイト](https://miura-diving.com/): 写真の海の部分だけが波打つ WebGPU の水面
 - [海の季節は、終わらない。](https://miura-diving.com/winter-diving/): 気象庁の平年値が構図になるデータシネマ
 - [AquaBit LAB](https://aquabit-lab.com/): AI事業とマリン事業の母体（サロン・講座・制作）
