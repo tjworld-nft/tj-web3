@@ -2,7 +2,7 @@
  * サイトに載せる文章・実績・リンクはすべてここに集約する。
  * 数字は「実際に確認できるもの」だけを載せる（作らない）。
  *   - 1,500名+ / ウェビナー50回+ / 参加500名+ … 本人確認済みの実績値
- *   - アプリ6本 … App Store で公開中（Blue Logbook / いまメシ / 海学 / 龍脈マップ / 仏のたとえ / うちの行事アルバム）
+ *   - アプリ7本 … App Store で公開中（Blue Logbook / いまメシ / 海学 / 龍脈マップ / 仏のたとえ / うちの行事アルバム / 海の日めくり）
  *   - アルバム3枚・魚歌19曲 … tj-music.com・各配信サービス
  *   - まんが24話 … miura-diving.com/manga/
  *   - 著書12冊 … 下の books の件数
@@ -30,6 +30,8 @@ export const LINKS = {
     hotokeGuide: "https://aquabit-lab.com/hotoke/",
     gyojiAlbum: "https://apps.apple.com/jp/app/id6833319101",
     gyojiAlbumGuide: "https://aquabit-lab.com/gyoji-album/",
+    umiHimekuri: "https://apps.apple.com/jp/app/id6834386701",
+    umiHimekuriGuide: "https://aquabit-lab.com/umi-himekuri/",
     manga: "https://miura-diving.com/manga/",
     winterFilm: "https://miura-diving.com/winter-diving/",
     pvFilm: "https://miura-diving.com/#film",
@@ -46,7 +48,7 @@ export const STATS = [
     { value: "47", unit: "", label: "LINEスタンプ・絵文字" },
     { value: "3", unit: "枚", label: "配信中のアルバム" },
     { value: "24", unit: "話", label: "解説まんが" },
-    { value: "6", unit: "本", label: "App Store のアプリ" },
+    { value: "7", unit: "本", label: "App Store のアプリ" },
 ] as const;
 
 /**
@@ -258,6 +260,20 @@ export const AI_WORKS: Work[] = [
         buddy: ["Flutter", "Claude Code", "PhotoKit"],
         depth: "230m",
         extra: [{ label: "案内とサポート", href: LINKS.gyojiAlbumGuide }],
+    },
+    {
+        id: "umi-himekuri",
+        title: "海の日めくり",
+        kind: "iOS App",
+        date: "2026.11",
+        body: "月と潮と季節の暦を、毎日1枚の白い紙でめくる日めくり。日付・月の形・旧暦・潮・節気・七十二候と、外に出れば確かめられる空や季節のひとことが1枚に。紙の月をまわすと日が進み、長く押すといまの空が見える。暦は端末の中で計算し、通信はしない。",
+        image: "/works/umi-himekuri.webp",
+        imageAlt: "iOSアプリ「海の日めくり」の画面3枚。日付・月の形・旧暦・潮・七十二候ときょうのひとことが載った日めくりの紙、紙を長く押すと見えるいまの空（月と星、月の出・月の入りの時刻）、めくった紙と一行がたまる紙の束",
+        href: LINKS.umiHimekuri,
+        linkLabel: "App Store で見る",
+        buddy: ["WidgetKit", "画像生成AI", "国立天文台の暦（照合）"],
+        depth: "235m",
+        extra: [{ label: "案内とサポート", href: LINKS.umiHimekuriGuide }],
     },
     {
         id: "tj-music",
