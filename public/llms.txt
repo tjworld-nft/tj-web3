@@ -3,7 +3,7 @@
 > PADIコースディレクター × AIクリエイター、TJ（ティージェー／吉田哲司）の公式ポートフォリオです。
 > 1997年にオーストラリアでプロダイバーになり、いまはインストラクターを育てるPADIコースディレクターとして、神奈川県三浦市（城ヶ島・宮川湾）で「三浦 海の学校」を運営しています。
 > あわせて AquaBit LAB の代表として、AIと一緒に本・音楽・まんが・映像・アプリ・Webをつくり、ウェビナー・サロン・講座で「つくり方」を教えています。
-> 最終更新: 2026年9月
+> 最終更新: 2026年11月
 
 ## プロフィール
 
@@ -14,7 +14,7 @@
 - 著書: 12冊（ダイビング・マリンスポーツ9冊、AI入門1冊、AI絵本2冊。Kindle ほか）
 - LINEスタンプ・絵文字: 47セット（LINE STORE 作者ページ）
 - 音楽: TJ Music（AIと制作）。アルバム3枚「Dive Drive Collection」「Certification Symphony」「魚歌 - UO-UTA -（2026年7月・全19曲）」
-- アプリ: App Store で7本公開中（Blue Logbook ／ いまメシ ／ 海学 ／ 龍脈マップ ／ 仏のたとえ ／ うちの行事アルバム ／ 海の日めくり）
+- アプリ: App Store で8本公開中（Blue Logbook ／ いまメシ ／ 海学 ／ 龍脈マップ ／ 仏のたとえ ／ うちの行事アルバム ／ 海の日めくり ／ かくれんぼダイブ）
 - 解説まんが: 「まんがで読むダイビング」全24話（三浦 海の学校のサイトで公開）
 
 ## できること・頼めること
@@ -35,6 +35,7 @@
 - [仏のたとえ](https://apps.apple.com/jp/app/id6832482210): お経のたとえ話を、パーリ語と漢訳の原文と一緒に短く読むアプリ。影絵の動画つき（iOS・無料・案内 https://aquabit-lab.com/hotoke/ ）
 - [うちの行事アルバム](https://apps.apple.com/jp/app/id6833319101): 子どもの行事を券のように並べ、その日に撮った写真をiPhoneの写真から日付で見つけて入れるアルバム。きょうだいが何人でも（iOS・無料・案内 https://aquabit-lab.com/gyoji-album/ ）
 - [海の日めくり](https://apps.apple.com/jp/app/id6834386701): 日付・月の形・旧暦・潮・七十二候と、空や季節のひとことを、毎日1枚の紙でめくる日めくり。月をまわすと日が進む（iOS・無料・案内 https://aquabit-lab.com/umi-himekuri/ ）
+- [かくれんぼダイブ](https://apps.apple.com/jp/app/id6835076333): 岩や海藻・砂の色をまねてかくれる海のいきもの36しゅるいを、3Dの海でさがして写真に撮るゲーム。撮った写真で図鑑とアルバムが埋まっていく（iOS・無料・広告と課金なし・オフライン・三浦 海の学校・サポート https://miura-diving.com/kakurenbo-dive/support/ ）
 - [三浦 海の学校 公式サイト](https://miura-diving.com/): 写真の海の部分だけが波打つ WebGPU の水面
 - [海の季節は、終わらない。](https://miura-diving.com/winter-diving/): 気象庁の平年値が構図になるデータシネマ
 - [AquaBit LAB](https://aquabit-lab.com/): AI事業とマリン事業の母体（サロン・講座・制作）
