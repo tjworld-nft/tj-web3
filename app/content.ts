@@ -2,7 +2,7 @@
  * サイトに載せる文章・実績・リンクはすべてここに集約する。
  * 数字は「実際に確認できるもの」だけを載せる（作らない）。
  *   - 1,500名+ / ウェビナー50回+ / 参加500名+ … 本人確認済みの実績値
- *   - アプリ7本 … App Store で公開中（Blue Logbook / いまメシ / 海学 / 龍脈マップ / 仏のたとえ / うちの行事アルバム / 海の日めくり）
+ *   - アプリ8本 … App Store で公開中（Blue Logbook / いまメシ / 海学 / 龍脈マップ / 仏のたとえ / うちの行事アルバム / 海の日めくり / かくれんぼダイブ）
  *   - アルバム3枚・魚歌19曲 … tj-music.com・各配信サービス
  *   - まんが24話 … miura-diving.com/manga/
  *   - 著書12冊 … 下の books の件数
@@ -32,6 +32,8 @@ export const LINKS = {
     gyojiAlbumGuide: "https://aquabit-lab.com/gyoji-album/",
     umiHimekuri: "https://apps.apple.com/jp/app/id6834386701",
     umiHimekuriGuide: "https://aquabit-lab.com/umi-himekuri/",
+    kakurenbo: "https://apps.apple.com/jp/app/id6835076333",
+    kakurenboSupport: "https://miura-diving.com/kakurenbo-dive/support/",
     manga: "https://miura-diving.com/manga/",
     winterFilm: "https://miura-diving.com/winter-diving/",
     pvFilm: "https://miura-diving.com/#film",
@@ -48,7 +50,7 @@ export const STATS = [
     { value: "47", unit: "", label: "LINEスタンプ・絵文字" },
     { value: "3", unit: "枚", label: "配信中のアルバム" },
     { value: "24", unit: "話", label: "解説まんが" },
-    { value: "7", unit: "本", label: "App Store のアプリ" },
+    { value: "8", unit: "本", label: "App Store のアプリ" },
 ] as const;
 
 /**
@@ -148,6 +150,20 @@ export const FUSION_WORKS: Work[] = [
         extra: [{ label: "App Store", href: LINKS.umigakuAppStore }],
     },
     {
+        id: "kakurenbo-dive",
+        title: "かくれんぼダイブ",
+        kind: "iOS App / Game",
+        date: "2026.11",
+        body: "岩だと思ったら、タコだった。岩や海藻、砂の色をまねてかくれる海のいきもの36しゅるいを、3Dの海でさがして写真に撮るゲーム。アザラシのコロと7つのポイントへもぐり、撮った写真は案内役クララのログブックに貼られて、図鑑とアルバムが埋まっていく。広告なし・課金なし、オフラインで遊べる。",
+        image: "/works/kakurenbo.webp",
+        imageAlt: "iOSゲーム「かくれんぼダイブ」の画面3枚。岩の上で色をまねてかくれるタコ、見つけたカエルアンコウを撮って下のフィルムに写真が入ったところ、カクレクマノミなどが並ぶ図鑑（まだ見つけていないいきものは「？？？」）",
+        href: LINKS.kakurenbo,
+        linkLabel: "App Store で見る",
+        buddy: ["three.js", "Flutter", "Claude Code", "Blender"],
+        depth: "42m",
+        extra: [{ label: "サポート", href: LINKS.kakurenboSupport }],
+    },
+    {
         id: "miura-site",
         title: "三浦 海の学校",
         kind: "Web / WebGPU",
@@ -158,7 +174,7 @@ export const FUSION_WORKS: Work[] = [
         href: LINKS.marine,
         linkLabel: "サイトを見る",
         buddy: ["WebGPU", "three.js", "Claude Code"],
-        depth: "42m",
+        depth: "43m",
     },
     {
         id: "pv",
@@ -172,7 +188,7 @@ export const FUSION_WORKS: Work[] = [
         href: LINKS.pvFilm,
         linkLabel: "映像を見る",
         buddy: ["Remotion", "three.js", "音楽生成AI"],
-        depth: "43m",
+        depth: "44m",
     },
     {
         id: "winter",
@@ -185,7 +201,7 @@ export const FUSION_WORKS: Work[] = [
         href: LINKS.winterFilm,
         linkLabel: "映像を見る",
         buddy: ["気象庁オープンデータ", "Remotion", "GLSL"],
-        depth: "44m",
+        depth: "45m",
     },
 ];
 
